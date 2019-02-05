@@ -1,0 +1,13 @@
+
+%   Author : E Stabler and M Stanojevic
+
+%  example : Aca knows what Bibi likes
+
+ε     ::     =v c
+ε     :: =v +wh c
+Bowie ::        d
+Iggy  ::        d
+likes :: =c  =d v
+sings :: =d  =d v
+what  ::        d -wh
+and   :: =c  =c c

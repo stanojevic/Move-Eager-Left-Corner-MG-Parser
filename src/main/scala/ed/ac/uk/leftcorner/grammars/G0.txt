@@ -1,0 +1,6 @@
+
+% just a sanity check
+
+a :: =d c
+b :: d
+
