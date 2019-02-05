@@ -67,6 +67,23 @@ If you want to see example run of non-eager move type:
 It may happen that you get a StackOverflowError because miniKanren goes very deep in recursion.
 In that case you will need to increase JVM's heap size -Xss10M
 
+How is SMC implemented
+----------------------
+
+Most MG implementations represent movers as a list that could potentially be empty.
+Checking for SMC consists only of checking of there are two movers with the same initial feature.
+Preventing duplicates in this representation requires an ``extra-logical'' operation (cut and var in Prolog).
+This makes it difficult to do eager move when movers are not instantiated.
+
+Instead in this parser a different representation is used that uses only normal logical operations.
+Movers are represented as a list that is always of the same length as the number of mover types (licensees).
+If the mover of type, let's say, wh is missing the entry for wh in the movers list will say NO_MOVER.
+Otherwise it will contain the info about the mover (span and features).
+
+All operations over mover lists do not change the length of the list but only it's content.
+SMC is implemented by preventing merge and move that combines two movers lists with
+non-empty slots for the same feature.
+
 Code guide
 ----------
 
