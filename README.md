@@ -35,7 +35,7 @@ If you want eager-move (the default one) type `useEagerMove` otherwise `useStand
 
 Now you enter a sentence you want to parse interactively:
 
-        resetParseState(List("Bowie", "likes", "how", "Iggy", "sings"))
+        resetParseState(List("Bowie", "likes", "what", "Iggy", "sings"))
 
 To print the current stack state with the last transition taken just type:
 

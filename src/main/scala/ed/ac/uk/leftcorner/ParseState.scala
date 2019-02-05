@@ -5,7 +5,10 @@ import ed.ac.uk.kanren.{KList, Val}
 
 object ParseState {
 
-  def initState(words:List[String], maxAllowedTransitions : Int, mgLogic: MGlogic, grammar: Grammar) : ParseState =
+  def initState(words:List[String], maxAllowedTransitions : Int, mgLogic: MGlogic, grammar: Grammar) : ParseState = {
+    if(words.exists(w => ! grammar.nonEmpties.exists(x => x._1 == w))){
+      throw new Exception("sentence contains a word for which there is no entry in the grammar")
+    }
     ParseState(
       transitionsSoFar = 0,
       maxAllowedTransitions = maxAllowedTransitions,
@@ -17,6 +20,7 @@ object ParseState {
       mgLogic = mgLogic,
       grammar = grammar
     )
+  }
 
 }
 
