@@ -3,7 +3,8 @@ package ed.ac.uk.leftcorner
 object Main {
 
   def main(args:Array[String]) : Unit =
-    exampleEagerMove()
+    exampleParse()
+    // exampleEagerMove()
 
   def exampleEagerMove() : Unit = {
     val g = Grammar.loadFromFile("./src/main/scala/ed/ac/uk/leftcorner/grammars/G1.txt")
@@ -80,9 +81,9 @@ object Main {
 
     implicit val searchStrategy = ed.ac.uk.kanren.DFS
 
-    val g = Grammar.loadFromFile("/home/milos/Projects/CCG-translator/src/main/scala/edin/leftcorner/grammars/G1.txt")
+    val g = Grammar.loadFromFile("./src/main/scala/ed/ac/uk/leftcorner/grammars/G1.txt")
 
-    val trees:Stream[Node] = g.parse(sent = "Aca knows what Bibi likes".split(" ").toList, maxAllowedTransitions = 15)
+    val trees:Stream[Node] = g.parse(sent = "Bowie likes what Iggy sings".split(" ").toList, maxAllowedTransitions = 15)
 
     println("parsing started")
     for(tree <- trees){

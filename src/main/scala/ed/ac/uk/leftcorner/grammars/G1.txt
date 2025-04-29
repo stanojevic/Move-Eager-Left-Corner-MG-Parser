@@ -1,7 +1,7 @@
 
 %   Author : E Stabler and M Stanojevic
 
-%  example : Aca knows what Bibi likes
+%  example : Bowie likes what Iggy sings
 
 ε     ::     =v c
 ε     :: =v +wh c
